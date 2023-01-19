@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Comics;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -14,7 +15,8 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
+        $comics = Comics::all();
+        return view('comic.index', compact('comics'));
     }
 
     /**
@@ -44,9 +46,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comics $comics)
     {
-        //
+       dd($comics);
     }
 
     /**
