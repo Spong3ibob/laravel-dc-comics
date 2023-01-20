@@ -9,30 +9,29 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Titolo</th>
-                <th scope="col">Descrition</th>
-                <th scope="col">Price</th>
                 <th scope="col">Type</th>
+                <th scope="col">Price</th>
                 <th scope="col">Sale Date</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+              
+                @foreach ($comics as $comic)
+                <tr>
+                  <th scope="row">{{$comic->id}}</th>
+                  <td>{{$comic->title}}</td>
+                  <td>{{$comic->type}}</td>
+                  <td>{{$comic->price}}€</td>
+                  <td>{{$comic->sale_date}}</td>
+                  <td>{{$comic->description}}</td>
+                  <td> <a class="btn btn-info" href="#" role="button">Info</a></td>
+                  <td> <a class="btn btn-warning" href="#" role="button">Modifica</a></td>
+                  <td> <a class="btn btn-danger" href="#" role="button">Elimina</a></td>
+                <tr>
+                @endforeach
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
+              <a class="btn btn-success" href="#" role="button">Aggiungi Nuovo</a>
+
             </tbody>
           </table>
 

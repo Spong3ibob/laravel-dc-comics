@@ -46,9 +46,11 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Comics $comics)
+    public function show(Comics $comic)
     {
-       dd($comics);
+       return view('comics.show', compact('comic'));
+
+       dd($comic);
     }
 
     /**
