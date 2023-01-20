@@ -24,13 +24,13 @@
                   <td>{{$comic->price}}€</td>
                   <td>{{$comic->sale_date}}</td>
                   <td>{{$comic->description}}</td>
-                  <td> <a class="btn btn-info" href="#" role="button">Info</a></td>
+                  <td> <a class="btn btn-info" href="{{ route('comics.show', $comic->id) }}" role="button">Info</a></td>
                   <td> <a class="btn btn-warning" href="#" role="button">Modifica</a></td>
                   <td> <a class="btn btn-danger" href="#" role="button">Elimina</a></td>
                 <tr>
                 @endforeach
               </tr>
-              <a class="btn btn-success" href="#" role="button">Aggiungi Nuovo</a>
+              <a class="btn btn-success" href="{{ route('comics.create') }}" role="button">Aggiungi Nuovo</a>
 
             </tbody>
           </table>
