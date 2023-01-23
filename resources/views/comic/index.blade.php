@@ -24,9 +24,14 @@
                   <td>{{$comic->price}}€</td>
                   <td>{{$comic->sale_date}}</td>
                   <td>{{$comic->description}}</td>
+
                   <td> <a class="btn btn-info" href="{{ route('comics.show', $comic->id) }}" role="button">Info</a></td>
-                  <td> <a class="btn btn-warning" href="#" role="button">Modifica</a></td>
-                  <td> <a class="btn btn-danger" href="#" role="button">Elimina</a></td>
+                  <td> <a class="btn btn-warning" href="{{ route('comics.edit', $comic->id)  }}" role="button">Modifica</a></td>
+                  <form action="{{ route('comics.destroy', $comic->id)  }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <td> <button class="btn btn-danger" type="submit" >Elimina</button></td>
+                  </form>
                 <tr>
                 @endforeach
               </tr>
